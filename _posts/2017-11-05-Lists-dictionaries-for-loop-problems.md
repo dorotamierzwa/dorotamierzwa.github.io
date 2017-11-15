@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Python - Lists, dictionaries & for-loops problems
+tags: python
 ---
 
 
