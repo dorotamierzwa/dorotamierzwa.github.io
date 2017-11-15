@@ -30,3 +30,5 @@ github:
 plugins:
   - jekyll-paginate
   - jekyll-gist
+
+google_analytics: UA-109684576-1
