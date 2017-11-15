@@ -5,7 +5,7 @@ title: Python - Lists, dictionaries & for-loops problems
 
 
 List and dictionaries with for loops is where Python gets tricky for beginners for the first time. It certainly did for me. 
-There were exercises that I did wrong every time I attempted them and it didn’t even occur to me that I am overseeing the same things repetitively. Only after writing them down and describing the solutions I used, I was able to match the problem with a solution AND understand it. Before I just moved quickly between exercises without giving the solution too much, thought which of the 20 trials was successful.
+There were exercises that I did wrong every time I attempted them and it didn’t even occur to me that I am overseeing the same things repetitively. Only after writing them down and describing the solutions I used, I was able to match the problem with a solution AND understand it. Before I just moved quickly between exercises without giving the solution too much thought, which of the 20 trials was successful.
 
 Each time the problems appeared when working with some text data in a file where I needed to iterate through each line. I worked out the examples based on a simple People.txt file:
 
@@ -31,7 +31,7 @@ file = open("People.txt", "r")
 age_dict = {}
 
 for person in file:
-    psplit = person.split(' ‘) # dividing each description into a list of words
+    psplit = person.split(' ‘)
     age_dict['name'] = psplit[0] 
     age_dict['age'] = psplit[2] 
 
@@ -69,7 +69,7 @@ print(people)
 ```
 **Output:**
 ```
-[{'name': 'Greta', 'age': '31'}, {'name': 'Greta', 'age': '31'}, {'name': 'Greta', 'age': '31'}, ….]
+[{'name': 'Greta', 'age': '31'}, {'name': 'Greta', 'age': '31'}, {'name': 'Greta', 'age': '31'}, …]
 ```
 
 This code also doesn’t bring expected result. I get the right number of dictionaries but again, with data from the last list created. That mistake can be also put down to the same issue - what and when goes in or outside the loop. Here I create the dictionary first and then start the loop. With each iteration, *people* list with information about first *person* becomes overwritten by information about second *person* etc. The key here is to create a new dictionary for each person - with every loop. At the end of the loop *age_dict* is added to people list. Now it’s ok to create a completely new dictionary, add data about other person, append to the people list and start the loop again. Finally the desired result:
@@ -92,7 +92,7 @@ print(people)
 **Output:**
 
 ```
-[{'name': 'Anne', 'age': '23'}, {'name': 'John', 'age': '34'}, {'name': 'Ted', 'age': '22'}, {'name': 'Lisa', 'age': '27'}, {'name': 'Ron', 'age': ’17’},….]
+[{'name': 'Anne', 'age': '23'}, {'name': 'John', 'age': '34'}, {'name': 'Ted', 'age': '22'}, {'name': 'Lisa', 'age': '27'}, {'name': 'Ron', 'age': ’17’},…]
 ```
 
 
@@ -107,7 +107,7 @@ file = open("People.txt", "r")
 dictionary = {}
 
 for person in file:
-    name = person[0: person.find(" is”)] # different way to extract part of a string
+    name = person[0: person.find(" is”)]
     dogs = person[person.find("has ") + 4: person.rfind(“ dog")]
     dictionary[name] = dogs
 
@@ -119,7 +119,7 @@ print(dictionary)
 {'Anne': '7 ', 'John': '5 ', 'Ted': '0 ', 'Lisa': '2 ', 'Ron': ‘1, … }
 ```
 
-## Problem #4 Create strings with data from a dictionary
+## Problem #4 Create strings with data from a dictionary.
 
 An inverse problem is to extract data from *dictionary* created in Problem #3 and write full sentences. This turns out to be simple with just two lines of code and .items() method, that produces list of tuples with two values.
 
@@ -134,10 +134,10 @@ for key, value in dictionary.items():
 Anne lives with 7 dogs.
 John lives with 5 dogs.
 Ted lives with 0 dogs.
-….
+…
 ```
 
-## Problem #5 Create a dictionary where values are calculated from data in a text file
+## Problem #5 Create a dictionary where values are calculated from data in a text file.
 
 Similarly as in Problem #3, doing some calculations on dictionary values requires a dictionary definition before the loop. Here I calculate total and average number of dogs per person:
 
@@ -150,20 +150,19 @@ dogs_list = []
 
 for person in file:
     dogs = int(person[person.find("has ") + 4: person.rfind(" dog")])
-
     dogs_list.append(dogs)
 
-number_of_dogs['total'] = sum(dogs_list)
-number_of_dogs['average'] = sum(dogs_list)/len(dogs_list)
+number_of_dogs['total number of dogs'] = sum(dogs_list)
+number_of_dogs['average number of dogs'] = sum(dogs_list)/len(dogs_list)
 
 print(number_of_dogs)
 ```
 **Output:**
 ```
-{'total': 22, 'average': 2.2}
+{'total number of dogs': 22, 'average number of dogs': 2.2}
 ```
 
-## Problem #6 Create a dictionary where values from text file are grouped by keys
+## Problem #6 Create a dictionary where values from text file are grouped by keys.
 
 Here I group age of people by the number of dogs. How old are people owning 1 dog? The challenge is to first create a list under the key “dogs” so that multiple ages can be appended.
 
@@ -178,7 +177,7 @@ for person in file:
     age = int(person[person.find("is ") + 3: person.rfind(" years")])
     dogs = int(person[person.find("has ") + 4: person.rfind(" dog")])
 
-    if average_age.get(dogs) is None: # a new key is created if it was not added as a key before
+    if average_age.get(dogs) is None:
         average_age[dogs] = []
 
     average_age[dogs].append(age)    
