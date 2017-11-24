@@ -6,7 +6,7 @@ tags: python
 
 At the very beginning of learning of a programming language you are very thorough. When there is a task, you solve it, and make your code look exactly as in the given answer, sometimes even changing your names of variables to "correct" ones. And then you hear "There are many ways to solve this problem". And you go, *wait what?*
 
-Today I am going thorugh few different ways of building a calculator in Python. I think it shows nicely how differently you can approach a task and push to be more creative even for simple tasks.
+Today I am going through few different ways of building a calculator in Python. I think it shows nicely how differently you can approach a task and push to be more creative even for simple tasks.
 
 ## The basic calculator
 
@@ -42,7 +42,7 @@ Type Q to quit.
 run = True
 
 while run:
-    choice = input("Choose number of desired operation:\n")
+    choice = input("Choose number of desired operation:")
 
     if choice == "Q":
         break
@@ -68,13 +68,91 @@ while run:
             print("Invalid input")
 ```
 
-As this code is introduced early, you can see its limitations easily. You have limited operations to choose from, also it allows to perform calculations on two numbers at a time.
+
+
+**Output**
+```
+Choose your operation:
+1. Addition
+2. Substraction
+3. Multiplication
+4. Division
+
+Type Q to quit.
+
+Choose number of desired operation:2
+First number:5 
+Second number:3
+Your result:  2
+Choose number of desired operation:
+```
+
+As this code is introduced early, you can see its limitations easily. You have limited operations to choose from, also it allows to perform calculations on only two numbers at a time.
 
 ## The advanced calculator
 
 An actual inspiration for this post was code shared by Nick Germaine on [Github](https://github.com/nickgermaine/MagicCalculator/blob/master/main.py). I stumbled upon it on a Udemy Python course. Nick wrote a code that was meant to work as a real calculator, where you can perform calculations on results of previous equations.
 
 **Input:**
+```
+import re
+
+print("A fancy calculator")
+print("Type 'quit' to exit\n")
+
+previous = 0
+run = True
+
+def perform_math():
+    global run
+    global previous
+
+    equation = ""
+
+    # defining equation as input from user depending on the previous result
+
+    if previous == 0:
+        equation = input("Enter equation:")
+    else:
+        equation = input(str(previous))
+
+    # closing on quit or cleaning equation from any other characters than numbers
+
+    if equation == "quit":
+        print("Thanks")
+        run = False
+    else:
+        equation = re.sub('a-zA-z:,.()" "', "", equation)
+
+        if previous == 0:
+            previous = eval(equation)
+        else:
+            previous = eval(str(previous) + equation)
+
+while run:
+    perform_math()
+
+```
+
+
+The code looks much more complicated than the first one, but it doesn't require advanced skills to understand it. Similarily as the basic calculator it's based on a function, user input and loops.
+
+**Output:**
+```
+A fancy calculator
+Type 'quit' to exit
+
+Enter equation:2+2 # user typed 2+2
+40 # result is 4, user typed 0
+40 # result
+```
+
+
+I made few alterations to Nick's code. In the orginal form, each time a result was produced (**4**) and user chose a number without specifying an operation (**0**), is simply added two numbers as a string (resulting in **40**):
+
+Normally when using a traditional calculator, not specifying an operation simply means you start a new calculation. So I added few lines marked with a comment. The calculator works now as follows:
+
+**Input**
 ```
 import re
 
@@ -89,8 +167,8 @@ def perform_math():
     global first_equation
     global previous
 
-    # added code - if this is not first equation and user inputs 
-    # a number (no operands), it is treated as a new equation
+    # added code - if this is not first equation and user inputs a number (no operands),
+    # it is treated as a new equation
 
     if not first_equation:
         equation = input(str(previous))
@@ -117,23 +195,6 @@ def perform_math():
 while run:
     perform_math()
 ```
-
-
-The code looks much more complicated than the first one, but it doesn't require advanced skills to understand it. Similarily as the basic calculator it's based on a function, user input and loops.
-
-In the above code I made few alterations to Nick's code. In the orginal form, each time a result was produced (**4**) and user chose a number without specifying an operation (**0**), is simply added two numbers as a string (resulting in **40**):
-
-**Output:**
-```
-A fancy calculator
-Type 'quit' to exit
-
-Enter equation:2+2 # user typed 2+2
-40 # result is 4, user typed 0
-40 # result
-```
-
-Normally when using a traditional calculator, not specifying an operation simply means you start a new calculation. So I added few lines marked with a comment. The calculator works now as follows:
 
 **Output:**
 ```
