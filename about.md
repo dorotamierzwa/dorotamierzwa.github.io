@@ -10,5 +10,7 @@ title: About
   I'm fascinated by data analysis and here is my place to learn the tools and build projects.<br>
 <br>
   Thanks for visiting and good luck to me!
+  <br>
+  You can reach me via mierzwa.dorota@gmail.com
 </p>
 
