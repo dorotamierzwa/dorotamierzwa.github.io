@@ -10,7 +10,7 @@ title: About
   I'm fascinated by data analysis and here is my place to learn the tools and build projects.<br>
 <br>
 	Currently my focus lies in statistics and its applications in Python. On a daily basis I work with SQL.
-	After work I partipate in <a href="https://pylove.org/#/about">PyLove</a>
+	After work I participate in <a href="https://pylove.org/#/about">PyLove</a>
 	workshops.<br>
 <br>
   Thanks for visiting and good luck to me!<br>
