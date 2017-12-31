@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Take your Python calculator to the next level
-tags: python
+tags: python all
 ---
 
 At the very beginning of learning of a programming language you are very thorough. When there is a task, you solve it, and make your code look exactly as in the given answer, sometimes even changing your names of variables to "correct" ones. And then you hear "There are many ways to solve this problem". And you go, *wait what?*

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Visa free travels - exploratory analysis with Kaggle dataset
-tags: python numpy pandas matplotlib jupyter-notebook
+tags: python numpy pandas matplotlib jupyter-notebook all
 ---
 
 
@@ -522,7 +522,7 @@ vc.info()
 ```
 
 
-<class 'pandas.core.frame.DataFrame'>
+    <class 'pandas.core.frame.DataFrame'>
     Index: 178 entries, Germany to Afghanistan
     Data columns (total 11 columns):
     visarank        178 non-null float64
@@ -1021,4 +1021,4 @@ The above diagrams check for patterns between number of welcoming visa free visi
 * Bigger area countries tend to allow up to 100 countries' citizents with no visa requirement.
 
 
-ipynb file with full tables can be found [here](https://github.com/dorotamierzwa/Data-analysis-projects/blob/master/Visa%20free%20travels%20-%20exploratory%20analysis%20with%20Kaggle%20dataset.ipynb).
+Ipynb file with full tables can be found [here](https://github.com/dorotamierzwa/Data-analysis-projects/blob/master/Visa%20free%20travels%20-%20exploratory%20analysis%20with%20Kaggle%20dataset.ipynb).
