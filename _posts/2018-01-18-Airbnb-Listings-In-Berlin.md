@@ -16,7 +16,7 @@ I added a filter that excluded outliers - prices above 2000 EUR (can be found in
   <iframe src="https://public.tableau.com/views/AirbnblistingsinBerlin2/AirbnbListingsinBerlin?:embed=y&:display_count=yes"></iframe>
 </div>
 
-
+[Link to Tableau Public](https://public.tableau.com/profile/dorota5520#!/vizhome/AirbnblistingsinBerlin2/AirbnbListingsinBerlin)
 
 There are 17 810 of hosts in Berlin that together list 20 572 places where you can leave your stuff and spend the night in Trezor. Alternatively sleep there too. 
 
@@ -30,12 +30,15 @@ Let’s check if this data supports such conclusion and look at the most expensi
 
 The last chart is what seems very interesting and immediately a question arises: Why so many listings have little or no reviews? First explanation that comes to mind is that they are probably too recent and simply didn’t manage to receive any guests yet. The data I’m using was published on 8th of May 2017, I think it makes sense now to filter out Hosts that first logged in in 2017.
 
+
 <style>
 .responsive-wrap iframe{ width: 700px; height: 600px}
 </style>
 <div class="responsive-wrap">
   <iframe src="https://public.tableau.com/views/Listingsvs_Reviews-AirbnbBerlin/Listingsvs_Reviews-AirbnbBerlin?:embed=y&:display_count=yes"></iframe>
 </div>
+
+[Link to Tableau Public](https://public.tableau.com/profile/dorota5520#!/vizhome/Listingsvs_Reviews-AirbnbBerlin/Listingsvs_Reviews-AirbnbBerlin)
 
 The relation is clear - the higher the Number of reviews, the lower the percentage of all Listings. The biggest group of Listings with no reviews are those set up in 2015. Not surprisingly, as this was the year when new Listings recorded their peak and almost 5k new Hosts logged in. The second biggest group are Listings from 2016 and then 2014, this structure is more or less maintained regardless of Number of reviews. This does not explain why the “no reveiew” Listings are so numerous.
 
